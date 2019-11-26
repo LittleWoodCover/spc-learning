@@ -5,11 +5,15 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/forezp/SpringcloudConfig/
+          uri: https://github.com/LittleWoodCover/spc-config.git
           search-paths: respo
           username:
-          passphrase:
+          password:
       label: master
 
 server:
   port: 9100
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/

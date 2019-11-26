@@ -2,12 +2,21 @@ spring:
   application:
     name: config-client
   cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
     config:
       label: master
       profile: dev
       discovery:
         enabled: true
-        service-id: config-server
+        serviceId: config-server
+  rabbitmq:
+    host: 39.104.22.132
+    username: logan
+    password: logan
+    port: 5672
 server:
   port: 9200
 
@@ -15,3 +24,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
