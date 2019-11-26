@@ -1,12 +1,14 @@
 server:
-  port: 9001
+  port: 9002
 
 eureka:
   instance:
-    hostname: peer1
+    hostname: peer2
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://peer2:9002/eureka/
+      defaultZone: http://peer1:9001/eureka/
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  profiles: peer2
