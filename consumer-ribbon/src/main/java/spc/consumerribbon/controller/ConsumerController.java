@@ -24,7 +24,6 @@ public class ConsumerController {
     }
 
     public String fallCall(){
-
         return "service not in use";
     }
 }

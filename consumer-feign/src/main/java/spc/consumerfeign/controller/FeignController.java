@@ -15,8 +15,4 @@ public class FeignController {
     public String hello(){
         return feignService.sayHello();
     }
-    @RequestMapping("fk")
-    public String fk(){
-        return "fk";
-    }
 }

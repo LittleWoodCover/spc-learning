@@ -1,12 +1,19 @@
 server:
   port: 9001
-
 eureka:
   instance:
-    hostname: peer1
+    hostname: localhost
+    healthcheck:
+      enable: true
+    statusPageUrl: http://localhost:9001/info
+    healthCheckUrl: http://localhost:9001/health
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://peer2:9002/eureka/
+      defaultZone: http://localhost:9001/eureka/
+
+spring:
+  application:
+    name: eureka
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
